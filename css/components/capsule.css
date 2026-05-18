@@ -1,9 +1,7 @@
 .capsule {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
     background-color: white;
     border-radius: 24px;
-    padding: 20px;
+    padding: 40px 46px;
+    max-width: 598px;
 }
