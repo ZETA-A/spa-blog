@@ -34,5 +34,35 @@
     cursor: pointer;
     grid-column: span 1;
     grid-row: span 1;
-    aspect-ratio: 1 / 1;
+}
+
+.weather-card {
+    background-color: #cadef7;
+    justify-content: space-between;
+    cursor: pointer;
+    flex-direction: column;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.weather-card > .weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.weather-card > .weather-emoji-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.weather-card > .weather-emoji-container > .weather-emoji {
+    font-size: 3rem;
+}
+
+.weather-card > .weather-info > .weather-temp {
+    font-size: 1.5rem;
+    font-weight: bold;
 }

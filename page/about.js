@@ -4,16 +4,22 @@ const about = () => /*html*/ `
             <img src="./assets/profile.png" alt="Profile Image" class="profile-image"/>
             <div class="profile-content">
                 <blockquote class="profile-quote">
-                    <p class="profile-description">${langData.profile.blockquoteDescription}</p>
+                    <p class="profile-description">${i18n.profile.blockquoteDescription}</p>
                 </blockquote>
-                <p class="profile-name">${langData.profile.blockquoteCite}</p>
+                <p class="profile-name">${i18n.profile.blockquoteCite}</p>
             </div>
         </div>
-        <div class="capsule">
-
+        <div id="github-card" class="capsule">
+            <img src="./assets/githubIcon.svg" alt="GitHub Logo" class="github-logo nodrag"/>
         </div>
-        <div class="capsule">
-
+        <div class="capsule weather-card">
+            <div class="weather-info">
+                <p class="weather-location">${i18n.profile.weatherLocation}</p>
+                <p class="weather-temp">${weatherAPI.temp}</p>
+            </div>
+            <div class="weather-emoji-container">
+                <p class="weather-emoji">${weatherAPI.emoji}</p>
+            </div>
         </div>
         
     </section>
