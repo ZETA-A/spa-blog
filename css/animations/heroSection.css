@@ -1,13 +1,10 @@
 .hero-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 240px));
+    grid-auto-rows: 1fr;
     gap: 16px;
-    align-items: stretch;
-    justify-content: center;
-    padding: 0px 16px;
-    max-width: 1192px;
+    padding: 0 16px;
     margin-inline: auto;
-    /* 페이드인 애니메이션 */
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -24,14 +21,13 @@
 
 @media screen and (max-width: 1024px) {
     .hero-section {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 897px;
-        margin-inline: auto;
+        grid-template-columns: repeat(3, minmax(0, 240px));
+
     }
 }
 
 @media screen and (max-width: 640px) {
     .hero-section {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 240px));
     }
 }
