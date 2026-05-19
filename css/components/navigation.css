@@ -39,10 +39,27 @@
     transition: color 0.3s ease;
 }
 
+.nav-item:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .nav-item.active {
     color: var(--color-primary);
     font-weight: 700;
 }
 .nav-item:hover {
     color: var(--color-primary);
+}
+
+@media screen and (max-width: 640px) {
+    .nav-container {
+        width: calc(100% - 32px);
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        padding: 10px 14px;
+        flex: 1;
+    }
 }

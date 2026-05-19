@@ -8,4 +8,5 @@
     box-sizing: border-box;
     overflow: hidden;
     aspect-ratio: 1 / 1;
+    box-shadow: 0 12px 30px rgba(62, 71, 114, 0.08);
 }

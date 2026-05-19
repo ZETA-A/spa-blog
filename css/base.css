@@ -15,8 +15,12 @@ body {
 }
 
 #app {
+    width: 100%;
+    min-height: 100vh;
     padding-top: 120px;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .nodrag {

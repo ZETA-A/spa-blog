@@ -1,18 +1,41 @@
 const routes = {
     '#/': () => about(),
-    '#/note': () =>
-        `<section class="hero-section"><h1 class="hero-title">My Notes</h1></section>`,
-    '#/projects': () =>
-        `<section class="hero-section"><h1 class="hero-title">Projects</h1></section>`,
+    '#/note': () => /*html*/ `
+            <section class="hero-section page-view">
+                <div class="capsule page-card">
+                    <p class="page-kicker">${i18n.navigation.note}</p>
+                    <h1 class="page-title">${i18n.pages.noteTitle}</h1>
+                    <p class="page-description">${i18n.pages.noteDescription}</p>
+                </div>
+            </section>
+        `,
+    '#/projects': () => /*html*/ `
+            <section class="hero-section page-view">
+                <div class="capsule page-card">
+                    <p class="page-kicker">${i18n.navigation.projects}</p>
+                    <h1 class="page-title">${i18n.pages.projectsTitle}</h1>
+                    <p class="page-description">${i18n.pages.projectsDescription}</p>
+                </div>
+            </section>
+        `,
 };
+
+const notFoundRoute = () => /*html*/ `
+        <section class="hero-section page-view">
+            <div class="capsule page-card error-card">
+                <p class="page-kicker">${i18n.pages.notFoundTitle}</p>
+                <h1 class="page-title">${i18n.pages.notFoundDescription}</h1>
+                <a class="page-link" href="#/">${i18n.pages.notFoundAction}</a>
+            </div>
+        </section>
+    `;
 
 $navItems.forEach((item) => {
     item.addEventListener('click', (e) => {
         const url = e.currentTarget.getAttribute('data-link');
 
         if (url) {
-            console.log('이동할 경로:', url); // 디버깅용
-            window.location.hash = url; // 해시를 직접 변경
+            window.location.hash = url;
         }
     });
 });

@@ -31,9 +31,13 @@
     background-color: #24292e;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     grid-column: span 1;
     grid-row: span 1;
+}
+
+.github-logo {
+    width: 64px;
+    height: 64px;
 }
 
 .weather-card {
@@ -65,4 +69,68 @@
 .weather-card > .weather-info > .weather-temp {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.weather-card.is-loading {
+    opacity: 0.86;
+}
+
+.weather-card.is-loading .weather-emoji {
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+.page-view {
+    width: 100%;
+    justify-content: center;
+}
+
+.page-card {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+    min-height: 320px;
+}
+
+.page-kicker {
+    font-size: 0.875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+}
+
+.page-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.page-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+}
+
+.page-link {
+    display: inline-flex;
+    width: fit-content;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
