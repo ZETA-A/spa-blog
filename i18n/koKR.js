@@ -1,0 +1,8 @@
+const i18n_koKR = {
+    profile: {
+        blockquoteDescription:
+            '더 많은 사람들이 기술을 <b>자유롭게</b> 사용할 수 있도록.<br/>현실의 문제를 해결하기 위해, 컴퓨터라는 도구를 사용합니다.',
+        blockquoteCite: '—풀스택을 꿈꾸는 개발자, <cite>김승현</cite>',
+        weatherLocation: '서울특별시',
+    },
+};

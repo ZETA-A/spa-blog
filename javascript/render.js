@@ -1,6 +1,4 @@
 async function render() {
-    await fetchLanguage(currentLanguage); // 언어 데이터를 먼저 로드 # i18n 패치
-
     const path = window.location.hash || '#/';
     console.log('현재 경로:', path);
 

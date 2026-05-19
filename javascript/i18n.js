@@ -1,9 +1,10 @@
 let currentLanguage = localStorage.getItem('lang') || 'koKR';
-let langData = {};
-async function fetchLanguage(lang) {
-    const response = await fetch(`./i18n/${lang}.json`);
-    langData = await response.json();
-}
+let langData = {
+    koKR: i18n_koKR,
+    enUS: i18n_enUS,
+};
+
+const i18n = langData[currentLanguage];
 
 /**
  * 언어 전환을 위한 코드(재렌더링 포함)
