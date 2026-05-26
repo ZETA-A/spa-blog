@@ -4,27 +4,147 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>darang.me</title>
+        <!-- SEO Meta Tags -->
+        <meta
+            name="description"
+            content="Seunghyeon Kim의 포트폴리오 및 개발 노트"
+        />
+        <meta name="keywords" content="풀스택 개발자, 포트폴리오, 웹 개발" />
+        <meta name="author" content="Seunghyeon Kim" />
+        <link rel="canonical" href="https://darang.me" />
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://darang.me" />
+        <meta property="og:title" content="Seunghyeon Kim - 풀스택 개발자" />
+        <meta
+            property="og:description"
+            content="더 많은 사람들이 기술을 자유롭게 사용할 수 있도록 돕는 개발자"
+        />
+        <meta
+            property="og:image"
+            content="https://darang.me/assets/profile.png"
+        />
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Seunghyeon Kim - 풀스택 개발자" />
+        <meta
+            name="twitter:description"
+            content="더 많은 사람들이 기술을 자유롭게 사용할 수 있도록 돕는 개발자"
+        />
+        <!-- Preload Fonts -->
+        <link
+            rel="preload"
+            href="./assets/fonts/Pretendard-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./assets/fonts/Pretendard-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
     </head>
     <body>
         <nav class="nav-container">
             <div class="nav-backdrop"></div>
 
             <button class="nav-item active" type="button" data-link="#/">
-                About
+                <span class="nav-text" data-i18n="navigation.about">About</span>
             </button>
             <button class="nav-item" type="button" data-link="#/note">
-                Note
+                <span class="nav-text" data-i18n="navigation.note">Note</span>
             </button>
             <button class="nav-item" type="button" data-link="#/projects">
-                Projects
+                <span class="nav-text" data-i18n="navigation.projects"
+                    >Projects</span
+                >
             </button>
         </nav>
 
+        <aside class="controls-container">
+            <button
+                class="control-btn scroll-to-top"
+                type="button"
+                title="Scroll to top"
+                aria-label="Scroll to top"
+            >
+                <span class="scroll-icon">↑</span>
+            </button>
+            <button
+                class="control-btn theme-toggle"
+                type="button"
+                title="Toggle theme"
+                aria-label="Toggle theme"
+            >
+                <span class="theme-icon">🌙</span>
+            </button>
+            <div class="language-selector">
+                <button
+                    class="control-btn lang-btn"
+                    type="button"
+                    data-lang="koKR"
+                    title="한국어"
+                >
+                    KO
+                </button>
+                <button
+                    class="control-btn lang-btn"
+                    type="button"
+                    data-lang="enUS"
+                    title="English"
+                >
+                    EN
+                </button>
+            </div>
+        </aside>
+
         <div id="app"></div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.contactLabel">
+                        Contact
+                    </h3>
+                    <a href="mailto:contact@darang.me" class="footer-link"
+                        >contact@darang.me</a
+                    >
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.followLabel">
+                        Follow
+                    </h3>
+                    <div class="footer-links">
+                        <a
+                            href="https://github.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-link"
+                            >GitHub</a
+                        >
+                        <a
+                            href="https://twitter.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-link"
+                            >Twitter</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright" data-i18n="footer.copyright">
+                &copy; 2026 Seunghyeon Kim. All rights reserved.
+            </p>
+        </footer>
         <!-- CSS 파일 로드 -->
         <link rel="stylesheet" href="./css/root.css" />
         <link rel="stylesheet" href="./css/fonts.css" />
         <link rel="stylesheet" href="./css/base.css" />
+        <link rel="stylesheet" href="./css/footer.css" />
+        <link rel="stylesheet" href="./css/pages/notes.css" />
         <link rel="stylesheet" href="./css/components/navigation.css" />
         <link rel="stylesheet" href="./css/components/capsule.css" />
         <link rel="stylesheet" href="./css/components/button.css" />
@@ -35,10 +155,15 @@
         <!-- i18n 데이터셋 파일 로드 -->
         <script src="./i18n/koKR.js"></script>
         <script src="./i18n/enUS.js"></script>
-        <!-- Javascript 파일 로드 -->
+        <!-- 상태 관리 및 유틸리티 -->
         <script src="./javascript/declare.js"></script>
         <script src="./javascript/i18n.js"></script>
+        <!-- Page 뷰 함수들 -->
         <script src="./page/about.js"></script>
+        <script src="./page/notes.js"></script>
+        <script src="./page/projects.js"></script>
+        <script src="./page/notFound.js"></script>
+        <!-- 라우팅 및 애니메이션 -->
         <script src="./javascript/route.js"></script>
         <script src="./javascript/animations/navigation_animation.js"></script>
         <script src="./javascript/render.js"></script>

@@ -1,34 +1,21 @@
 const routes = {
-    '#/': () => about(),
-    '#/note': () => /*html*/ `
-            <section class="hero-section page-view">
-                <div class="capsule page-card">
-                    <p class="page-kicker">${i18n.navigation.note}</p>
-                    <h1 class="page-title">${i18n.pages.noteTitle}</h1>
-                    <p class="page-description">${i18n.pages.noteDescription}</p>
-                </div>
-            </section>
-        `,
-    '#/projects': () => /*html*/ `
-            <section class="hero-section page-view">
-                <div class="capsule page-card">
-                    <p class="page-kicker">${i18n.navigation.projects}</p>
-                    <h1 class="page-title">${i18n.pages.projectsTitle}</h1>
-                    <p class="page-description">${i18n.pages.projectsDescription}</p>
-                </div>
-            </section>
-        `,
+    '#/': { view: () => about(), title: 'Seunghyeon Kim - About' },
+    '#/note': {
+        view: () => renderNotesList(),
+        title: 'My Notes',
+    },
+    '#/projects': {
+        view: () => projects(),
+        title: 'Projects',
+    },
 };
 
-const notFoundRoute = () => /*html*/ `
-        <section class="hero-section page-view">
-            <div class="capsule page-card error-card">
-                <p class="page-kicker">${i18n.pages.notFoundTitle}</p>
-                <h1 class="page-title">${i18n.pages.notFoundDescription}</h1>
-                <a class="page-link" href="#/">${i18n.pages.notFoundAction}</a>
-            </div>
-        </section>
-    `;
+// Note views moved to /page/notes.js
+
+const notFoundRoute = {
+    view: () => notFoundView(),
+    title: '404 - Page Not Found',
+};
 
 $navItems.forEach((item) => {
     item.addEventListener('click', (e) => {
@@ -38,4 +25,19 @@ $navItems.forEach((item) => {
             window.location.hash = url;
         }
     });
+});
+
+$themeToggle?.addEventListener('click', toggleTheme);
+
+$scrollToTop?.addEventListener('click', scrollToTop);
+
+$langBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        $langBtns.forEach((b) => b.classList.remove('active'));
+        e.target.classList.add('active');
+        switchLanguage(e.target.getAttribute('data-lang'));
+    });
+    if (btn.getAttribute('data-lang') === currentLanguage) {
+        btn.classList.add('active');
+    }
 });
