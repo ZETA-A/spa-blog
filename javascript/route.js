@@ -1,9 +1,20 @@
 const routes = {
-    '#/': () => about(),
-    '#/note': () =>
-        `<section class="hero-section"><h1 class="hero-title">My Notes</h1></section>`,
-    '#/projects': () =>
-        `<section class="hero-section"><h1 class="hero-title">Projects</h1></section>`,
+    '#/': { view: () => about(), title: 'Seunghyeon Kim - About' },
+    '#/note': {
+        view: () => renderNotesList(),
+        title: 'My Notes',
+    },
+    '#/projects': {
+        view: () => projects(),
+        title: 'Projects',
+    },
+};
+
+// Note views moved to /page/notes.js
+
+const notFoundRoute = {
+    view: () => notFoundView(),
+    title: '404 - Page Not Found',
 };
 
 $navItems.forEach((item) => {
@@ -11,8 +22,22 @@ $navItems.forEach((item) => {
         const url = e.currentTarget.getAttribute('data-link');
 
         if (url) {
-            console.log('이동할 경로:', url); // 디버깅용
-            window.location.hash = url; // 해시를 직접 변경
+            window.location.hash = url;
         }
     });
+});
+
+$themeToggle?.addEventListener('click', toggleTheme);
+
+$scrollToTop?.addEventListener('click', scrollToTop);
+
+$langBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        $langBtns.forEach((b) => b.classList.remove('active'));
+        e.target.classList.add('active');
+        switchLanguage(e.target.getAttribute('data-lang'));
+    });
+    if (btn.getAttribute('data-lang') === currentLanguage) {
+        btn.classList.add('active');
+    }
 });

@@ -1,0 +1,55 @@
+/* ===========================================
+   HERO SECTION
+   =========================================== */
+
+.hero-section {
+    --capsule-gap: 16px;
+    --capsule-size: 240px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: var(--capsule-size);
+    grid-auto-flow: dense;
+    gap: var(--capsule-gap);
+    width: min(100%, 1040px);
+    padding: 0 16px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@media (max-width: 1056px) {
+    .hero-section {
+        --capsule-size: minmax(0, 1fr);
+
+        grid-template-columns: repeat(3, var(--capsule-size));
+        grid-auto-rows: clamp(180px, calc((100vw - 64px) / 3), 240px);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(164px, calc((100vw - 48px) / 2), 220px);
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+    }
+}
+
+/* ===========================================
+   ENTRANCE ANIMATION
+   =========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
