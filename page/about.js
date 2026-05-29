@@ -12,7 +12,7 @@ const about = () => /*html*/ `
         </div>
 
         <!-- GitHub Card -->
-        <a id="github-card" class="capsule" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="${i18n.profile.githubLabel}">
+        <a id="github-card" class="capsule" href="https://github.com/zeta-a" target="_blank" rel="noopener noreferrer" aria-label="${i18n.profile.githubLabel}">
             <img src="./assets/githubIcon.svg" alt="GitHub Logo" class="github-logo nodrag" loading="lazy"/>
         </a>
 
