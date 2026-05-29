@@ -3,16 +3,16 @@
    =========================================== */
 
 .profile-card {
+    align-items: center;
     gap: 32px;
     flex-direction: row;
 }
 
 .profile-image {
-    width: 20vw;
-    min-width: 64px;
-    max-width: 128px;
-    height: auto;
-    object-fit: contain;
+    width: clamp(72px, 20vw, 128px);
+    height: clamp(72px, 20vw, 128px);
+    border-radius: 50%;
+    object-fit: cover;
     flex-shrink: 0;
 }
 
@@ -653,6 +653,7 @@
 
     .profile-image {
         width: 88px;
+        height: 88px;
     }
 
     .skills-row {

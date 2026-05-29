@@ -53,7 +53,7 @@ const about = () => /*html*/ `
                         <h3 class="experience-title">Student Developer</h3>
                         <p class="experience-period">2021 - Present</p>
                     </div>
-                    <p class="experience-description">바닐라 JS와 다양한 기술 스택으로 웹 프로젝트 개발 및 유지보수</p>
+                    <p class="experience-description">웹 프로그래밍과 AI, 모바일 앱 위주로 개발</p>
                 </article>
 
                 <article class="experience-item">
