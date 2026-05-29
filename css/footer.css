@@ -1,9 +1,20 @@
 /* Footer Styles */
 .footer {
+    position: relative;
     background: var(--color-bg);
-    border-top: 1px solid var(--color-accent);
     padding: 48px 24px;
     margin-top: 80px;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(calc(100% - 48px), 1200px);
+    height: 1px;
+    background: var(--color-accent);
+    transform: translateX(-50%);
 }
 
 .footer-content {
@@ -62,17 +73,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .footer {
-        border-top-color: var(--color-accent);
-    }
-
     .footer-copyright {
         border-top-color: var(--color-accent);
     }
-}
-
-:root[data-theme='dark'] .footer {
-    border-top-color: var(--color-accent);
 }
 
 :root[data-theme='dark'] .footer-copyright {
